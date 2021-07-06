@@ -28,7 +28,7 @@ class Round {
   calculatePercentCorrect() {
     let total = this.deck.length;
     let incorrect = this.incorrectGuesses.length;
-    let amountCorrect = parseInt(((total - incorrect)/total) * 100);
+    let amountCorrect = parseInt(((total - incorrect) / total) * 100);
     return `${amountCorrect}%`;
   }
   endRound() {
