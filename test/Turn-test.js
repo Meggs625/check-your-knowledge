@@ -11,11 +11,11 @@ describe('Turn', function() {
 
   this.beforeEach(() => {
     card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
-    turn = new Turn('array', card)});
+    turn = new Turn('array', card)
+  });
 
-  it('should be a function', () => {
-    const turn = new Turn();
-    expect(turn).to.be.a('function');
+  it('should be an object', () => {
+    expect(turn).to.be.a('object');
   });
   
   it('should accept a user guess and the current card', () => {
