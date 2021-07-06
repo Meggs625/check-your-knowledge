@@ -6,8 +6,7 @@ const Card = require('../src/Card');
 describe('Card', function() {
 
   it('should be a function', function() {
-    const card = new Card();
-    expect(card).to.be.a('function');
+    expect(Card).to.be.a('function');
   });
 
   it('should be an instance of Card', function() {
