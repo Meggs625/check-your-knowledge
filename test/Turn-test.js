@@ -9,7 +9,7 @@ describe('Turn', function() {
   let card;
   let turn;
 
-  this.beforeEach(() => {
+  beforeEach(() => {
     card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
     turn = new Turn('array', card)
   });
