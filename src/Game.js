@@ -8,15 +8,15 @@ const Round = require('./Round');
 
 class Game {
   constructor() {
-    this.currentRound;
+    this.currentRound = 0;
   }
 
   start() {
     let cards = this.createCards();
     let deck = this.createDeck(cards);
     this.currentRound = new Round(deck);
-    this.printMessage(deck, this.currentRound);
-    this.printQuestion(this.currentRound);
+    // this.printMessage(deck, this.currentRound);
+    // this.printQuestion(this.currentRound);
   }
 
   createCards() {
