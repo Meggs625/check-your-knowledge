@@ -15,8 +15,8 @@ class Game {
     let cards = this.createCards();
     let deck = this.createDeck(cards);
     this.currentRound = new Round(deck);
-    this.printMessage();
-    this.printQuestion();
+    this.printMessage(deck, this.currentRound);
+    this.printQuestion(this.currentRound);
   }
 
   createCards() {

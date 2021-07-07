@@ -30,15 +30,15 @@ describe('Round', function() {
   })
 
   it('should increase the turn count by one when guess is provided', () => {
-    round.takeTurns('pug');
+    round.takeTurn('pug');
     expect(round.turns).to.equal(1);
   })
 
   it('should move to the next card after a guess has been made', () => {
-    round.takeTurns('pug');
+    round.takeTurn('pug');
     let secondCard = round.currentCard;
 
-    round.takeTurns('monkey');
+    round.takeTurn('monkey');
     let thirdCard = round.currentCard;
 
     expect(secondCard).to.deep.equal(round.deck[1]);
@@ -46,30 +46,30 @@ describe('Round', function() {
   })
 
   it('should evaluate if the guess is correct or incorrect', () => {
-    expect(round.takeTurns('pug')).to.equal('incorrect!');
+    expect(round.takeTurn('pug')).to.equal('incorrect!');
   })
 
   it('should store any incorrect guesses by their id', () => {
-    round.takeTurns('pug');
+    round.takeTurn('pug');
     expect(round.incorrectGuesses).to.deep.equal([1]);
     expect(round.incorrectGuesses.length).to.equal(1);
   })
 
   it('should respond as to whether guess is correct or incorrect', () => {
-    expect(round.takeTurns('pug')).to.equal('incorrect!');
-    expect(round.takeTurns('gallbladder')).to.equal('correct!');
+    expect(round.takeTurn('pug')).to.equal('incorrect!');
+    expect(round.takeTurn('gallbladder')).to.equal('correct!');
   })
 
   it('should return the percentage of correct guesses', () => {
-    round.takeTurns('pug');
-    round.takeTurns('monkey');
-    round.takeTurns('Fitzgerald');
+    round.takeTurn('pug');
+    round.takeTurn('monkey');
+    round.takeTurn('Fitzgerald');
     expect(round.calculatePercentCorrect()).to.equal('33%');
   })
   it('should print the results when a round has been completed', () => {
-    round.takeTurns('pug');
-    round.takeTurns('monkey');
-    round.takeTurns('Fitzgerald');
+    round.takeTurn('pug');
+    round.takeTurn('monkey');
+    round.takeTurn('Fitzgerald');
     expect(round.endRound()).to.equal('** Round over! ** You answered 33% of the questions correctly!')
   })
 })
