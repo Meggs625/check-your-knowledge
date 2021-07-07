@@ -15,6 +15,12 @@ describe('Game', function() {
     expect(game.currentRound).to.equal();
   })
 
+  it('should create a deck of cards', () => {
+    let game = new Game();
+    game.start();
+    expect(game.createDeck()).to.be.instanceOf(Deck);
+  })
+
   it('should create a new group of cards, a new deck, and a new round that becomes the current round', () => {
     let game = new Game();
     game.start();

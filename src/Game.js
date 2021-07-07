@@ -21,7 +21,7 @@ class Game {
 
   createCards() {
     let roundCards = [];
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 10; i++) {
       roundCards.push(prototypeQuestions[Math.floor(Math.random() * prototypeQuestions.length)]);
     }
     roundCards.forEach(card => {
