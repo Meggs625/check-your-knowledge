@@ -10,7 +10,7 @@ class Round {
   returnCurrentCard() {
     return this.currentCard;
   }
-  takeTurns(guess) {
+  takeTurn(guess) {
     const turn = new Turn(guess, this.currentCard);
     let feedback = turn.giveFeedback(turn.evaluateGuess());
     if (feedback === 'incorrect!') {
