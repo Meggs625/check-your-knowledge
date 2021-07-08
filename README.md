@@ -22,5 +22,7 @@ This code will allow the user to play a rousing round of Flashcards to test thei
 2. Run `npm install`.
 3. Next, run `node index.js` to start the first game. 
 
-
+## Project Board/Project Specs
+A basic Trello project board can be found [here](https://trello.com/b/q8PkJvXn/flashcard-project).
+The project specifications are located [here](https://frontend.turing.edu/projects/flash-cards.html).
 
