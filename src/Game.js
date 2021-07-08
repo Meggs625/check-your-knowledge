@@ -15,8 +15,8 @@ class Game {
     let cards = this.createCards();
     let deck = this.createDeck(cards);
     this.currentRound = new Round(deck);
-    // this.printMessage(deck, this.currentRound);
-    // this.printQuestion(this.currentRound);
+    this.printMessage(deck, this.currentRound);
+    this.printQuestion(this.currentRound);
   }
 
   createCards() {
@@ -27,7 +27,7 @@ class Game {
         roundCards.push(currentCard);
       }
     }
-    roundCards.forEach(card => {
+    roundCards.map(card => {
       new Card(card.id, card.question, card.answers, card.correctAnswer);
     })
     return roundCards;
