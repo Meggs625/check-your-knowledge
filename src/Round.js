@@ -9,6 +9,7 @@ class Round {
   }
   returnCurrentCard() {
     return this.currentCard;
+   
   }
   takeTurn(guess) {
     const turn = new Turn(guess, this.currentCard);
@@ -33,7 +34,7 @@ class Round {
   }
   endRound() {
     let score = this.calculatePercentCorrect();
-    return `** Round over! ** You answered ${score} of the questions correctly!`;
+    console.log(`** Round over! ** You answered ${score} of the questions correctly!`);
   }
 }
 module.exports = Round;

@@ -8,7 +8,7 @@ const Round = require('./Round');
 
 class Game {
   constructor() {
-    this.currentRound;
+    this.currentRound = 0;
   }
 
   start() {
@@ -21,10 +21,13 @@ class Game {
 
   createCards() {
     let roundCards = [];
-    for (let i = 0; i < 10; i++) {
-      roundCards.push(prototypeQuestions[Math.floor(Math.random() * prototypeQuestions.length)]);
+    for (let i = 0; i < 20; i++) {
+      let currentCard = prototypeQuestions[Math.floor(Math.random() * prototypeQuestions.length)];
+      if (!roundCards.includes(currentCard) && roundCards.length < 10) {
+        roundCards.push(currentCard);
+      }
     }
-    roundCards.forEach(card => {
+    roundCards.map(card => {
       new Card(card.id, card.question, card.answers, card.correctAnswer);
     })
     return roundCards;

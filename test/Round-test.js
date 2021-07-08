@@ -21,12 +21,17 @@ describe('Round', function() {
 
   })
 
+  it('should be a function', () => {
+    expect(Round).to.be.a('function');
+  })
+
   it('should take in a new card deck', () => {
     expect(round.deck).to.deep.equal([card1, card2, card3]);
   })
 
   it('should return the information for the current card', () => {
-    expect(round.returnCurrentCard()).to.deep.equal(round.deck[0]);
+    let currentCard = round.returnCurrentCard();
+    expect(currentCard).to.deep.equal(round.deck[0]);
   })
 
   it('should increase the turn count by one when guess is provided', () => {
@@ -46,7 +51,8 @@ describe('Round', function() {
   })
 
   it('should evaluate if the guess is correct or incorrect', () => {
-    expect(round.takeTurn('pug')).to.equal('incorrect!');
+    let guess = round.takeTurn('pug');
+    expect(guess).to.equal('incorrect!');
   })
 
   it('should store any incorrect guesses by their id', () => {
@@ -56,8 +62,10 @@ describe('Round', function() {
   })
 
   it('should respond as to whether guess is correct or incorrect', () => {
-    expect(round.takeTurn('pug')).to.equal('incorrect!');
-    expect(round.takeTurn('gallbladder')).to.equal('correct!');
+    let guess1 = round.takeTurn('pug');
+    let guess2 = round.takeTurn('gallbladder');
+    expect(guess1).to.equal('incorrect!');
+    expect(guess2).to.equal('correct!');
   })
 
   it('should return the percentage of correct guesses', () => {
@@ -65,11 +73,5 @@ describe('Round', function() {
     round.takeTurn('monkey');
     round.takeTurn('Fitzgerald');
     expect(round.calculatePercentCorrect()).to.equal('33%');
-  })
-  it('should print the results when a round has been completed', () => {
-    round.takeTurn('pug');
-    round.takeTurn('monkey');
-    round.takeTurn('Fitzgerald');
-    expect(round.endRound()).to.equal('** Round over! ** You answered 33% of the questions correctly!')
   })
 })
