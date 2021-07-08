@@ -19,7 +19,8 @@ This code will allow the user to play a rousing round of Flashcards to test thei
 ## Install/Setup:
 
 1. Clone the repository to the directory of choice on your local machine.
-2. Next, run `node index.js` to start the first game. 
+2. Run `npm install`.
+3. Next, run `node index.js` to start the first game. 
 
 
 
